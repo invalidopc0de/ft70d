@@ -6,12 +6,12 @@ add_compile_options(
         -Wl,-T${LINKER_SCRIPT}
 )
 
-add_executable(blinky.mot
+set(APP_SOURCES
         blinky.c
         )
 
-target_link_libraries(blinky.mot PUBLIC
+add_executable(blinky_ft70d.mot ${APP_SOURCES})
+target_link_libraries(blinky_ft70d.mot PUBLIC
         platform_70d
         )
-
-set_target_properties(blinky.mot PROPERTIES LINK_DEPENDS ${LINKER_SCRIPT})
+set_target_properties(blinky_ft70d.mot PROPERTIES LINK_DEPENDS ${LINKER_SCRIPT})
